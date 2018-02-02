@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+	
+	<script src="js/first.js"></script>
+	<script src="js/second.js"></script>
+	<meta charset="utf-8">
+	<title>Bitcoin Trade Calculator</title>
+
+</head>
+
+<body onload="getBtcPrice()">
+
+	<h1 class="swing">Swing Trade Calculator</h1>
+
+	<h6 class="par">The purpose of this trade calculator is so you can easily enter the bitcoin value of a trade when you buy a cyptocurrency and then when you sell it. This will help you find your profits by comparing to bitcoin at real time prices and then calculating the profits or losses. The reason there are 6 spaces for each buy and sell is because sometimes trading platforms must split up your buy and sell orders into smaller orders. You do not need to enter all six values, if you only have one value just leave the rest blank it will work all the same. Happy Trading! </h6>
+
+	<form name = "contactForm">	
+
+
+		<div class="well well-lg" id="outterwell">
+			<h1 id="buyLabel">Buy Values</h1>
+			<div class="well well-md" id="innerwell">
+
+				<div class="row no-gutters">
+					<div class="col-md-1">
+						<div class="input-group">
+							<span class="input-group-text" ></span>
+							<input type="text" class="form-control" id="buynum1" placeholder="First Value"> 
+						</div></div>
+						<div class="col-md-1" style= "padding:0;"><div class="plus">+</div></div>
+						<div class="col-md-1 ">
+							<div class="input-group">
+								<span class="input-group-text" ></span>
+								<input type="text" class="form-control" id="buynum2" placeholder="Second Value">
+							</div>
+						</div>
+						<div class="col-md-1 ">
+							<div class="plus">+</div>
+						</div>
+						<div class="col-md-1">
+							<div class="input-group">
+								<span class="input-group-text"></span>
+								<input type="text" class="form-control"  id="buynum3" placeholder="Third Value">
+							</div></div>
+							<div class="col-md-1 ">
+								<div class="plus">+</div>
+							</div>
+							<div class="col-md-1">
+								<div class="input-group">
+									<span class="input-group-text" ></span>
+									<input type="text" class="form-control" id="buynum4" placeholder="Fourth Value">
+								</div></div>
+								<div class="col-md-1 ">
+									<div class="plus">+</div>
+								</div>
+								<div class="col-md-1">
+									<div class="input-group">
+										<span class="input-group-text" ></span>
+										<input type="text" class="form-control" id="buynum5" placeholder="Fifth Value">
+									</div></div>
+									<div class="col-md-1 ">
+										<div class="plus">+</div>
+									</div>
+									<div class="col-md-1">
+										<div class="input-group">
+											<span class="input-group-text" ></span>
+											<input type="text" class="form-control" id="buynum6" placeholder="Sixth Value">
+										</div></div>
+									</div>
+
+								</div>
+
+								<br> <br>
+
+								<h1 id="sellLabel">Sell Values</h1>
+								<div class="well well-md" id="innerwell">
+
+									<div class="row no-gutters">
+										<div class="col-md-1">
+											<div class="input-group">
+												<span class="input-group-text" ></span>
+												<input type="text" class="form-control" id="sellnum1" placeholder="First Value"> 
+											</div></div>
+											<div class="col-md-1" style= "padding:0;"><div class="plus">+</div></div>
+											<div class="col-md-1 ">
+												<div class="input-group">
+													<span class="input-group-text" ></span>
+													<input type="text" class="form-control" id="sellnum2" placeholder="Second Value">
+												</div>
+											</div>
+											<div class="col-md-1 ">
+												<div class="plus">+</div>
+											</div>
+											<div class="col-md-1">
+												<div class="input-group">
+													<span class="input-group-text" ></span>
+													<input type="text" class="form-control" id="sellnum3" placeholder="Third Value">
+												</div></div>
+												<div class="col-md-1 ">
+													<div class="plus">+</div>
+												</div>
+												<div class="col-md-1">
+													<div class="input-group">
+														<span class="input-group-text" ></span>
+														<input type="text" class="form-control" id="sellnum4" placeholder="Fourth Value">
+													</div></div>
+													<div class="col-md-1 ">
+														<div class="plus">+</div>
+													</div>
+													<div class="col-md-1">
+														<div class="input-group">
+															<span class="input-group-text" ></span>
+															<input type="text" class="form-control" id="sellnum5" placeholder="Fifth Value">
+														</div></div>
+														<div class="col-md-1 ">
+															<div class="plus">+</div>
+														</div>
+														<div class="col-md-1">
+															<div class="input-group">
+																<span class="input-group-text" ></span>
+																<input type="text" class="form-control" id="sellnum6" placeholder="Sixth Value">
+															</div></div>
+														</div>
+
+													</div>
+
+													<div class="buttons">
+														<button type="button" onclick="calculate()" class="btn-lg btn-success ">Calculate Profits</button>
+
+														<button type="button" onclick="clearBoard()" class="btn-lg btn-danger ">Clear Board</button>
+													</div>
+
+												</div>
+
+
+
+											</div>
+
+
+
+
+
+										</form>
+
+										<h1 class="results">Results:</h1>
+
+
+
+										<div class="row">
+											<div class="col-sm-offset-3 col-sm-6">
+												<div class="card">
+													<h5 class="card-header">Gains</h5>
+													<div class="card-body">
+														
+														<h3 class="card-text" id="gains" >$0</h3>
+
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<br>
+
+										<div class="row">
+											<div class="col-sm-3">
+												<div class="card">
+													<h5 class="card-header">Current Bitcoin Price</h5>
+													<div class="card-body">
+														
+														<h3 class="card-text" id="btcPrice" >$18,900</h3>
+
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="card">
+													<h5 class="card-header">Buy Value</h5>
+													<div class="card-body">
+														
+														<h3 class="card-text" id="buyVal">$0</h3>
+
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="card">
+													<h5 class="card-header">Sell Value</h5>
+													<div class="card-body">
+														
+														<h3 class="card-text" id="sellVal">$0</h3>
+
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="card">
+													<h5 class="card-header">Percent Gains</h5>
+													<div class="card-body">
+														
+														<h3 class="card-text" id="percentGains">%0</h3>
+
+													</div>
+												</div>
+											</div>
+											<br>
+											<br>
+											<p class="donations">Donations: 3KSZkpLxD91rT4576FfMp2t5XDdYzhqbas</p>
+
+										</body>
+
+
+
+										</html>

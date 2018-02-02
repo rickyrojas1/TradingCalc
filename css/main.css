@@ -1,0 +1,81 @@
+.form-control {
+	display:initial !important;
+}
+
+.plus{
+	
+	text-align: center;
+}
+
+h1{
+	padding: 0;
+	padding-bottom: 15px;
+	margin: 0;
+}
+
+#outterwell{
+
+
+}
+
+.row.col-sm-6{
+	text-align: center;
+	padding: 40px;
+}
+
+.buttons{
+	
+	padding-left: 37%;
+	padding-top: 20px;
+}
+
+.swing{
+	text-align: center;
+	padding:30px;
+}
+.par{
+	padding:30px;
+}
+
+.card-header{
+	text-align: center;
+}
+.card-text{
+	text-align: center;
+	padding:40px;
+}
+
+.results{
+	text-align: center;
+	padding: 40px;
+}
+
+#innerwell{
+	background: #e2e2e2;
+}
+
+.padding-0{
+	padding-right:0;
+	padding-left:0;
+}
+
+.donations{
+	text-align: center;
+	padding-top: 100px;
+}
+
+.row{
+	padding-bottom: 20px;
+}
+
+.row.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+	padding-left: 3%;
+	align: center;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+	padding-right: 0;
+	padding-left: 0;
+}
